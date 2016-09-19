@@ -179,9 +179,6 @@
                 }
                 catch (e) {
                 }
-                var order = $('#selector-user-search').val();
-                var queryString = $('#textbox-user-search').val();
-                console.log(queryString+"--"+order);
                 ajaxRequest.open("GET", "ajax/getUserDetails.php?user_id=" + id, true);
                 ajaxRequest.send(null);
                 ajaxRequest.onreadystatechange = function(){
@@ -197,6 +194,27 @@
                         ajaxDisplay2.value = ajaxResult.split('--')[2];
                         ajaxDisplay3.value = ajaxResult.split('--')[3];
                         ajaxDisplay4.value = ajaxResult.split('--')[4];
+                    }
+                }
+            }
+            function updateUserDetails(id){
+                var ajaxRequest;  // The variable that makes Ajax possible!
+                try {
+                    ajaxRequest = new XMLHttpRequest();
+                }
+                catch (e) {
+                }
+                var ajaxDisplay0 = document.getElementById('userSurname');
+                var ajaxDisplay1 = document.getElementById('userFirstname');
+                var ajaxDisplay2 = document.getElementById('userEmail');
+                var ajaxDisplay3 = document.getElementById('userPhone');
+                var ajaxDisplay4 = document.getElementById('userLocation');
+                ajaxRequest.open("GET", "ajax/getUserDetails.php?user_id=" + id+"&surname="+ajaxDisplay0.value+"&firstname="+
+                    ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value, true);
+                ajaxRequest.send(null);
+                ajaxRequest.onreadystatechange = function(){
+                    if(ajaxRequest.readyState == 4){
+
                     }
                 }
             }
@@ -571,7 +589,7 @@
                                     <option value="7">Oshodi--Egbeda</option>
                                 </select>
                                <br><br>
-                               <button>Done</button>
+                               <button id="done-1">Done</button>
                            </div>
                         </td>
                     </tr>
