@@ -47,6 +47,7 @@
             function show1(object){
                 $('#edit-divId').css('visibility','visible');
                 $('#curtainId').css('visibility','visible');
+                getUserDetails(object.dataset.id);
                 //alert(object.dataset.id);
             }
             function hide1() {
@@ -196,7 +197,6 @@
                         ajaxDisplay2.value = ajaxResult.split('--')[2];
                         ajaxDisplay3.value = ajaxResult.split('--')[3];
                         ajaxDisplay4.value = ajaxResult.split('--')[4];
-
                     }
                 }
             }
