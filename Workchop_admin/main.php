@@ -171,6 +171,35 @@
                     }
                 }
             }
+            function getUserDetails(id){
+                var ajaxRequest;  // The variable that makes Ajax possible!
+                try {
+                    ajaxRequest = new XMLHttpRequest();
+                }
+                catch (e) {
+                }
+                var order = $('#selector-user-search').val();
+                var queryString = $('#textbox-user-search').val();
+                console.log(queryString+"--"+order);
+                ajaxRequest.open("GET", "ajax/getUserDetails.php?user_id=" + id, true);
+                ajaxRequest.send(null);
+                ajaxRequest.onreadystatechange = function(){
+                    if(ajaxRequest.readyState == 4){
+                        var ajaxDisplay0 = document.getElementById('userSurname');
+                        var ajaxDisplay1 = document.getElementById('userFirstname');
+                        var ajaxDisplay2 = document.getElementById('userEmail');
+                        var ajaxDisplay3 = document.getElementById('userPhone');
+                        var ajaxDisplay4 = document.getElementById('userLocation');
+                        var ajaxResult = ajaxRequest.responseText;
+                        ajaxDisplay0.value = ajaxResult.split('--')[0];
+                        ajaxDisplay1.value = ajaxResult.split('--')[1];
+                        ajaxDisplay2.value = ajaxResult.split('--')[2];
+                        ajaxDisplay3.value = ajaxResult.split('--')[3];
+                        ajaxDisplay4.value = ajaxResult.split('--')[4];
+
+                    }
+                }
+            }
         </script>
     </head>
     <body>
