@@ -37,7 +37,9 @@
                 $('#selector-issue-order').change(function () {
                     userIssue();
                 });
-
+                $('#done-1').click(function () {
+                    updateUserDetails();
+                });
                 usersCount();
                 appAvgRating();
                 appRating();
@@ -188,16 +190,18 @@
                         var ajaxDisplay2 = document.getElementById('userEmail');
                         var ajaxDisplay3 = document.getElementById('userPhone');
                         var ajaxDisplay4 = document.getElementById('userLocation');
+                        var ajaxDisplay5 = document.getElementById('userId');
                         var ajaxResult = ajaxRequest.responseText;
                         ajaxDisplay0.value = ajaxResult.split('--')[0];
                         ajaxDisplay1.value = ajaxResult.split('--')[1];
                         ajaxDisplay2.value = ajaxResult.split('--')[2];
                         ajaxDisplay3.value = ajaxResult.split('--')[3];
                         ajaxDisplay4.value = ajaxResult.split('--')[4];
+                        ajaxDisplay5.value = id;
                     }
                 }
             }
-            function updateUserDetails(id){
+            function updateUserDetails(){
                 var ajaxRequest;  // The variable that makes Ajax possible!
                 try {
                     ajaxRequest = new XMLHttpRequest();
@@ -209,12 +213,16 @@
                 var ajaxDisplay2 = document.getElementById('userEmail');
                 var ajaxDisplay3 = document.getElementById('userPhone');
                 var ajaxDisplay4 = document.getElementById('userLocation');
-                ajaxRequest.open("GET", "ajax/getUserDetails.php?user_id=" + id+"&surname="+ajaxDisplay0.value+"&firstname="+
+                var ajaxDisplay5 = document.getElementById('userId');
+                ajaxRequest.open("GET", "ajax/getUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
                     ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value, true);
                 ajaxRequest.send(null);
                 ajaxRequest.onreadystatechange = function(){
                     if(ajaxRequest.readyState == 4){
-
+                        var ajaxResult = ajaxRequest.responseText;
+                        if(ajaxResult == 'done'){
+                            hide1();
+                        }
                     }
                 }
             }
@@ -575,6 +583,7 @@
                            text-align: center;padding: 5px;font-family: 'Century Gothic'">
                                <font style="font-family: 'Century Gothic'; font-size: 17px; color: #212121;">Edit User Details</font>
                                 <br>
+                                <input id="userId" value=""/>
                                 <input id="userSurname" type="text" value="" class="user-details-font"/>
                                 <input id="userFirstname" type="text" value=""/>
                                 <input id="userEmail" type="text" value=""/>
