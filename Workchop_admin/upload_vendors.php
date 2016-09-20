@@ -128,6 +128,10 @@
                     vendorPhone = $('#vendor-phone-1').val()+'----'+$('#vendor-phone-2').val();
                 }
                 var vendorType = $('#vendor-type').val();
+                if($('#vendor-type').val() == 6){
+                    var other = $('#other').val();
+                    vendorType = 'Other : ' + other;
+                }
                 var vendorLocation = '';
                 if($('#states').val() == 1){
                     vendorLocation = $('#areas').val();

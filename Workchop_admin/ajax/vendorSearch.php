@@ -139,6 +139,9 @@ function getTypeString($index){
         case 5:
             $string = "Tailor";
             break;
+        default:
+            $string = $index;
+            break;
     }
     return $string;
 }
