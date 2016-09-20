@@ -265,7 +265,7 @@
                         <option value="5">Tailor</option>
                         <option value="6">Other</option>
                     </select><br>
-                    <font class="text" id="other-label" style="visibility: hidden">Specify : </font>
+                    <font class="text" id="other-label" style="visibility: hidden;">Specify : </font>
                     <input type="text" class="input-width" id="other" style="visibility: hidden;"/>
                     <br><br>
 
