@@ -101,6 +101,16 @@
 
                     }
                 });
+                $('#vendor-type').change(function () {
+                    if($('#vendor-type').val() == 6){
+                        $('#other').css('visibility','visible');
+                        $('#other-label').css('visibility','visible');
+                    }
+                    else{
+                        $('#other').css('visibility','hidden');
+                        $('#other-label').css('visibility','hidden');
+                    }
+                });
             });
             function uploadVendors(){
                 var ajaxRequest;  // The variable that makes Ajax possible!
@@ -249,7 +259,10 @@
                         <option value="3">Make-Up Artist</option>
                         <option value="4">Mechanic</option>
                         <option value="5">Tailor</option>
-                    </select>
+                        <option value="6">Other</option>
+                    </select><br>
+                    <font class="text" id="other-label" style="visibility: hidden">Specify : </font>
+                    <input type="text" class="input-width" id="other" style="visibility: hidden;"/>
                     <br><br>
 
                     <font class="text">Phone Number 1 : </font>
