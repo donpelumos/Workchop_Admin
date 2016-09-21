@@ -220,11 +220,11 @@
                 ajaxRequest.onreadystatechange = function(){
                     if(ajaxRequest.readyState == 4){
                         var ajaxResult = ajaxRequest.responseText;
-                        alert('-'+ajaxResult.trim()+'-');
+                        //alert('-'+ajaxResult.trim()+'-');
                         /*
                             "ajax/updateUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
                             ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value);*/
-                        if(ajaxResult == 'done'){
+                        if(ajaxResult.trim() == 'done'){
                             ajaxDisplay0.value = "";
                             ajaxDisplay1.value = "";
                             ajaxDisplay2.value = "";
