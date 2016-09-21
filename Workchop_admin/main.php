@@ -583,7 +583,7 @@
                            text-align: center;padding: 5px;font-family: 'Century Gothic'">
                                <font style="font-family: 'Century Gothic'; font-size: 17px; color: #212121;">Edit User Details</font>
                                 <br>
-                                <input id="userId" value=""/>
+                                <input id="userId" value="" style="visibility: hidden;"/>
                                 <input id="userSurname" type="text" value="" class="user-details-font"/>
                                 <input id="userFirstname" type="text" value=""/>
                                 <input id="userEmail" type="text" value=""/>

@@ -118,6 +118,24 @@ function getLocationString($index){
         case 7:
             $string = "Oshodi--Egbeda";
             break;
+        case 21:
+            $string = "Abaji";
+            break;
+        case 22:
+            $string = "Abuja Municipal";
+            break;
+        case 23:
+            $string = "Bwari";
+            break;
+        case 24:
+            $string = "Gwagwalada";
+            break;
+        case 25:
+            $string = "Kuje";
+            break;
+        case 26:
+            $string = "Kwali";
+            break;
     }
     return $string;
 }
