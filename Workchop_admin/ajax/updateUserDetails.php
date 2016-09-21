@@ -18,10 +18,9 @@ try{
     $email = $_GET['email'];
     $phone = $_GET['phone'];
     $location = $_GET['location'];
-    $query = $db->prepare("update permanent_users set surname=$surname, firstname=$firstname, mobile_number=$phone, 
-      email_address=$email, location_index=$location where user_id='$userId'");
+    $query = $db->prepare("update permanent_users set surname='$surname', firstname='$firstname', mobile_number='$phone',email_address='$email', location_index='$location' where user_id='$userId'");
     $query->execute();
-    $result = $query->fetchAll();
+
     echo "done";
 }
 catch(Exception $e){

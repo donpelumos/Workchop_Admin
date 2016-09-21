@@ -187,8 +187,8 @@
                     if(ajaxRequest.readyState == 4){
                         var ajaxDisplay0 = document.getElementById('userSurname');
                         var ajaxDisplay1 = document.getElementById('userFirstname');
-                        var ajaxDisplay2 = document.getElementById('userEmail');
-                        var ajaxDisplay3 = document.getElementById('userPhone');
+                        var ajaxDisplay3 = document.getElementById('userEmail');
+                        var ajaxDisplay2 = document.getElementById('userPhone');
                         var ajaxDisplay4 = document.getElementById('userLocation');
                         var ajaxDisplay5 = document.getElementById('userId');
                         var ajaxResult = ajaxRequest.responseText;
@@ -220,7 +220,15 @@
                 ajaxRequest.onreadystatechange = function(){
                     if(ajaxRequest.readyState == 4){
                         var ajaxResult = ajaxRequest.responseText;
+                        alert(ajaxResult+'--'+
+                            "ajax/updateUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
+                            ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value);
                         if(ajaxResult == 'done'){
+                            ajaxDisplay0.value = "";
+                            ajaxDisplay1.value = "";
+                            ajaxDisplay2.value = "";
+                            ajaxDisplay3.value = "";
+                            ajaxDisplay4.value = "";
                             hide1();
                             searchUsers();
                         }
