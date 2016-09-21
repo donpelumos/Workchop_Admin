@@ -70,12 +70,14 @@
                                     <td class=\"user-table-body\">
                                         <p style=\"vertical-align: middle;margin: 0px;\">".$value[4]."</p>
                                     </td>
+                                    <!--
                                     <td class=\"user-table-body\" style=\"text-align: center\">
                                         <img src=\"images/edit.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $uniqueId ."\"/>
                                     </td>
                                     <td class=\"user-table-body\" style=\"text-align: center\" >
                                         <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $uniqueId ."\"/>
                                     </td>
+                                    -->
                                 </tr>
                         ";
             $i++;
