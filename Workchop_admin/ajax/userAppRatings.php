@@ -52,8 +52,9 @@
                             <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Firstname</th>
                             <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Rating</th>
                             <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Date</th>
+                            <!--
                             <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Edit</th>
-                            <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Delete</th>
+                            <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Delete</th>-->
 
                         </tr>";
         foreach($result as $value){
