@@ -21,6 +21,7 @@
         <script src="jquery-1.11.3.min.js"></script>
         <script type="text/javascript">
             var currState = 1;
+            var vendorType = $('#vendor-type').val();
             var currImg=1;
             $(document).ready(function() {
                 $('#states').change(function () {
@@ -63,6 +64,11 @@
                     }
                 });
                 $('#submit').click(function () {
+                    vendorType = $('#vendor-type').val();
+                    if(vendorType == 6){
+                        var other = $('#other').val();
+                        vendorType = 'Other : ' + other;
+                    }
                     if($('#vendor-name').val().length == 0 || $('#vendor-phone-1').val().length == 0 ||
                         $('#vendor-name2').val().length == 0 ){
                         alert('Fields not completed');
@@ -80,7 +86,7 @@
                     }
                     else if($('#vendor-phone-2').val().length == 0){
                         var text = $('#vendor-name').val()+'--'+$('#states').val()+'--'+$('#areas').val()+'--'+
-                                $('#vendor-type').val()+'--'+$('#vendor-phone-1').val();
+                                vendorType+'--'+$('#vendor-phone-1').val();
                         uploadVendors();
                         //alert (text);
                     }
@@ -94,7 +100,7 @@
                         }
                         else {
                             var text = $('#vendor-name').val() + '--' + $('#states').val() + '--' + $('#areas').val() + '--' +
-                                $('#vendor-type').val() + '--' + $('#vendor-phone-1').val() + '&&' + $('#vendor-phone-2').val();
+                                vendorType + '--' + $('#vendor-phone-1').val() + '&&' + $('#vendor-phone-2').val();
                             //alert (text);
                             uploadVendors();
                         }
@@ -127,7 +133,7 @@
                 else if($('#vendor-phone-2').val().length > 0 ){
                     vendorPhone = $('#vendor-phone-1').val()+'----'+$('#vendor-phone-2').val();
                 }
-                var vendorType = $('#vendor-type').val();
+
                 if($('#vendor-type').val() == 6){
                     var other = $('#other').val();
                     vendorType = 'Other : ' + other;
