@@ -214,7 +214,7 @@
                 var ajaxDisplay3 = document.getElementById('userPhone');
                 var ajaxDisplay4 = document.getElementById('userLocation');
                 var ajaxDisplay5 = document.getElementById('userId');
-                ajaxRequest.open("GET", "ajax/getUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
+                ajaxRequest.open("GET", "ajax/updateUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
                     ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value, true);
                 ajaxRequest.send(null);
                 ajaxRequest.onreadystatechange = function(){
@@ -222,6 +222,7 @@
                         var ajaxResult = ajaxRequest.responseText;
                         if(ajaxResult == 'done'){
                             hide1();
+                            searchUsers();
                         }
                     }
                 }
