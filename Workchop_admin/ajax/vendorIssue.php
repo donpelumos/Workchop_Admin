@@ -36,8 +36,9 @@ $pwd = 'workchop_12345';
                                 <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Subject</th>
                                 <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Issue</th>
                                 <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Date</th>
+                                <!--
                                 <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Edit</th>
-                                <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Delete</th>
+                                <th style=\"font-weight: normal;padding: 0px 7px 0px 7px; \">Delete</th>-->
     
                             </tr>";
         foreach($result as $value){
@@ -59,12 +60,13 @@ $pwd = 'workchop_12345';
                                         <td class=\"vendor-table-body\">
                                             <p style=\"vertical-align: middle;margin: 0px;\">".$value[3]."</p>
                                         </td>
+                                        <!--
                                         <td class=\"vendor-table-body\" style=\"text-align: center\">
                                             <img src=\"images/edit.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $uniqueId ."\"/>
                                         </td>
                                         <td class=\"vendor-table-body\" style=\"text-align: center\">
                                             <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $uniqueId ."\"/>
-                                        </td>
+                                        </td>-->
                                     </tr>
                             ";
             $i++;

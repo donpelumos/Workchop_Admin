@@ -20,8 +20,8 @@
         <link href="main.css" rel="stylesheet" >
         <script src="jquery-1.11.3.min.js"></script>
         <script type="text/javascript">
+            var deleteId = '';
             $(document).ready(function() {
-                var editShown = 0;
                 $('#tab2').click(function () {
                     window.open("main2.php","_self");
                 });
@@ -40,6 +40,12 @@
                 $('#done-1').click(function () {
                     updateUserDetails();
                 });
+                $('#sure-no').click(function () {
+                    hide1();
+                });
+                $('#sure-yes').click(function () {
+                    deleteUserDetails(deleteId);
+                });
                 usersCount();
                 appAvgRating();
                 appRating();
@@ -52,8 +58,18 @@
                 getUserDetails(object.dataset.id);
                 //alert(object.dataset.id);
             }
+            function show2(object){
+                $('#delete-divId').css('visibility','visible');
+                $('#curtainId').css('visibility','visible');
+                deleteId = object.dataset.id;
+            }
             function hide1() {
                 $('#edit-divId').css('visibility','hidden');
+                $('#curtainId').css('visibility','hidden');
+                hide2();
+            }
+            function hide2() {
+                $('#delete-divId').css('visibility','hidden');
                 $('#curtainId').css('visibility','hidden');
             }
             function searchUsers(){
@@ -233,6 +249,22 @@
                             hide1();
                             searchUsers();
                         }
+                    }
+                }
+            }
+            function deleteUserDetails(id){
+                var ajaxRequest;  // The variable that makes Ajax possible!
+                try {
+                    ajaxRequest = new XMLHttpRequest();
+                }
+                catch (e) {
+                }
+                ajaxRequest.open("GET", "ajax/deleteUserDetails.php?user_id=" + id, true);
+                ajaxRequest.send(null);
+                ajaxRequest.onreadystatechange = function(){
+                    if(ajaxRequest.readyState == 4){
+                        searchUsers();
+                        hide1();
                     }
                 }
             }
@@ -610,6 +642,24 @@
                                <br><br>
                                <button id="done-1">Done</button>
                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="delete-divId" class="edit-div">
+                <table style="display: table;">
+                    <tr style="width: 100%;">
+                        <td style="text-align: center;width:100%;">
+                            <div style="width:100%;height: 200px;background-color: #e1e1e1;
+                           text-align: center;padding: 5px;font-family: 'Century Gothic'">
+                                <font style="font-family: 'Century Gothic'; font-size: 17px; color: #ee4545;">Are you Sure</font>
+                                <br>
+                                <font style="font-family: 'Century Gothic'; font-size: 12px; color: #ee4545;">
+                                    You are deleting the user's account and every information associated with it. </font>
+                                <br><br>
+                                <button id="sure-yes">Yes</button>
+                                <button id="sure-no">Cancel</button>
+                            </div>
                         </td>
                     </tr>
                 </table>

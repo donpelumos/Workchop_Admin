@@ -88,7 +88,8 @@
                          data-id=\"". $userId ."\" onclick=\"show1(this)\"/>
                     </td>
                     <td class=\"user-table-body\" style=\"text-align: center\" >
-                        <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $userId ."\"/>
+                        <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $userId ."\" class=\"delete-user\" 
+                        onclick=\"show2(this)\"/>
                     </td>
                 </tr>
             ";
