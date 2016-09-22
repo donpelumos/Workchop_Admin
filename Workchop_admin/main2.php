@@ -301,11 +301,11 @@
             }
             catch (e) {
             }
-            ajaxRequest.open("GET", "ajax/deleteUserDetails.php?user_id=" + id, true);
+            ajaxRequest.open("GET", "ajax/deleteVendorDetails.php?vendor_id=" + id, true);
             ajaxRequest.send(null);
             ajaxRequest.onreadystatechange = function(){
                 if(ajaxRequest.readyState == 4){
-                    searchUsers();
+                    searchVendors();
                     hide1();
                 }
             }

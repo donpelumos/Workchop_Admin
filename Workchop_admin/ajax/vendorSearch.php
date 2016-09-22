@@ -81,7 +81,7 @@ try{
                         class=\"edit-user\"/>
                     </td>
                     <td class=\"vendor-table-body\" style=\"text-align: center\">
-                        <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $vendorId ."\" class=\"edit-user\"
+                        <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $vendorId ."\" class=\"delete-user\"
                         onclick=\"show2(this)\"/>
                     </td>
                 </tr>
