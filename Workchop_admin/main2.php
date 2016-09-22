@@ -19,8 +19,9 @@
     <link href="font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="jquery-1.11.3.min.js"></script>
     <script type="text/javascript">
+        var deleteId = '';
+        var has2Phones = 0;
         $(document).ready(function() {
-            var deleteId = '';
             $('#tab1').click(function () {
                 window.open("main.php","_self");
             });
@@ -238,9 +239,11 @@
                     if(fullPhone.includes("&&")){
                         ajaxDisplay2.value = fullPhone.split('&&')[0];
                         ajaxDisplay2b.value = fullPhone.split('&&')[1];
+                        has2Phones = 1;
                     }
                     else{
                         ajaxDisplay2.value = fullPhone;
+                        has2Phones = 0;
                     }
 
                 }
@@ -262,13 +265,13 @@
             var ajaxDisplay5 = document.getElementById('vendorId');
             var vendorType = ajaxDisplay1.value;
             var vendorPhone = '';
-            if($('#vendorPhone2').val().length > 0){
-                vendorPhone = ajaxDisplay3.value+'&&'+ajaxDisplay3b.value;
+            if(has2Phones == 1){
+                vendorPhone = ajaxDisplay3.value+"----"+ajaxDisplay3b.value;
             }
             else{
                 vendorPhone = ajaxDisplay3.value;
             }
-            
+
             ajaxRequest.open("GET", "ajax/updateVendorDetails.php?vendor_id=" + ajaxDisplay5.value+"&vendor_name="+ajaxDisplay0.value+"&vendor_type="+
                 ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+vendorPhone+"&location="+ajaxDisplay4.value, true);
             ajaxRequest.send(null);
