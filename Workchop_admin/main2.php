@@ -50,233 +50,264 @@
             appRating();
             vendorFeedback();
             vendorIssue();
-            function show1(object){
-                $('#edit-divId').css('visibility','visible');
-                $('#curtainId').css('visibility','visible');
-                getVendorDetails(object.dataset.id);
-                //alert(object.dataset.id);
-            }
-            function show2(object){
-                $('#delete-divId').css('visibility','visible');
-                $('#curtainId').css('visibility','visible');
-                deleteId = object.dataset.id;
-            }
-            function hide1() {
-                $('#edit-divId').css('visibility','hidden');
-                $('#curtainId').css('visibility','hidden');
-                hide2();
-            }
-            function hide2() {
-                $('#delete-divId').css('visibility','hidden');
-                $('#curtainId').css('visibility','hidden');
-            }
-            function searchVendors(){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-                var order = $('#selector-vendor-search').val();
-                var queryString = $('#textbox-vendor-search').val();
-                console.log(queryString+"--"+order);
-                ajaxRequest.open("GET", "ajax/vendorSearch.php?key=" + queryString+"&order="+order, true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxDisplay = document.getElementById('vendor-search-result-div');
-                        var ajaxResult = ajaxRequest.responseText;
-                        ajaxDisplay.innerHTML = ajaxResult;
-
-                    }
-                }
-            }
-            function vendorsCount(){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-
-                ajaxRequest.open("GET", "ajax/totalVendorCount.php", true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxDisplay = document.getElementById('vendorCount');
-                        var ajaxResult = ajaxRequest.responseText;
-                        ajaxDisplay.innerHTML = ajaxResult;
-
-                    }
-                }
-            }
-            function appAvgRating(){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-
-                ajaxRequest.open("GET", "ajax/vendorAvgAppRating.php", true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxDisplay = document.getElementById('appAvgRating');
-                        var ajaxResult = ajaxRequest.responseText;
-                        var rating = ajaxResult.split('--')[1];
-                        var count = ajaxResult.split('--')[0];
-                        ajaxDisplay.innerHTML = rating + " from "+ count;
-
-                    }
-                }
-            }
-            function appRating(){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-                var order = $('#selector-ratings-order').val();
-                ajaxRequest.open("GET", "ajax/vendorAppRatings.php?order="+order, true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxDisplay = document.getElementById('vendor-ratings-div');
-                        var ajaxResult = ajaxRequest.responseText;
-                        ajaxDisplay.innerHTML = ajaxResult;
-
-                    }
-                }
-            }
-            function vendorFeedback(){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-                var order = $('#selector-feedback-order').val();
-                ajaxRequest.open("GET", "ajax/vendorFeedback.php?order="+order, true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxDisplay = document.getElementById('feedback-div');
-                        var ajaxResult = ajaxRequest.responseText;
-                        ajaxDisplay.innerHTML = ajaxResult;
-
-                    }
-                }
-            }
-            function vendorIssue(){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-                var order = $('#selector-issue-order').val();
-                ajaxRequest.open("GET", "ajax/vendorIssue.php?order="+order, true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxDisplay = document.getElementById('issue-div');
-                        var ajaxResult = ajaxRequest.responseText;
-                        ajaxDisplay.innerHTML = ajaxResult;
-
-                    }
-                }
-            }
-            function getVendorDetails(id){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-                ajaxRequest.open("GET", "ajax/getVendorDetails.php?user_id=" + id, true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxDisplay0 = document.getElementById('vendorName');
-                        var ajaxDisplay1 = document.getElementById('vendorType');
-                        var ajaxDisplay3 = document.getElementById('vendorEmail');
-                        var ajaxDisplay2 = document.getElementById('vendorPhone');
-                        var ajaxDisplay2b = document.getElementById('vendorPhone2');
-                        var ajaxDisplay4 = document.getElementById('vendorLocation');
-                        var ajaxDisplay5 = document.getElementById('vendorId');
-                        var ajaxResult = ajaxRequest.responseText;
-                        ajaxDisplay0.value = ajaxResult.split('--')[0];
-                        ajaxDisplay1.value = ajaxResult.split('--')[1];
-                        var fullPhone = ajaxResult.split('--')[2];
-                        if(fullPhone.contains("&&")){
-                            ajaxDisplay2.value = fullPhone.split('&&')[0];
-                            ajaxDisplay2b.value = fullPhone.split('&&')[1];
-                        }
-                        else{
-                            ajaxDisplay2.value = fullPhone;
-                        }
-                        ajaxDisplay3.value = ajaxResult.split('--')[3];
-                        ajaxDisplay4.value = ajaxResult.split('--')[4];
-                        ajaxDisplay5.value = id;
-                    }
-                }
-            }
-            function updateVendorDetails(){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-                var ajaxDisplay0 = document.getElementById('vendorName');
-                var ajaxDisplay1 = document.getElementById('vendorType');
-                var ajaxDisplay2 = document.getElementById('vendorEmail');
-                var ajaxDisplay3 = document.getElementById('vendorPhone');
-                var ajaxDisplay3b = document.getElementById('vendorPhone2');
-                var ajaxDisplay4 = document.getElementById('vendorLocation');
-                var ajaxDisplay5 = document.getElementById('vendorId');
-                ajaxRequest.open("GET", "ajax/updateUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
-                    ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value, true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        var ajaxResult = ajaxRequest.responseText;
-                        //alert('-'+ajaxResult.trim()+'-');
-                        /*
-                         "ajax/updateUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
-                         ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value);*/
-                        if(ajaxResult.trim() == 'done'){
-                            ajaxDisplay0.value = "";
-                            ajaxDisplay1.value = "";
-                            ajaxDisplay2.value = "";
-                            ajaxDisplay3.value = "";
-                            ajaxDisplay4.value = "";
-                            hide1();
-                            searchUsers();
-                        }
-                    }
-                }
-            }
-            function deleteVendorDetails(id){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                try {
-                    ajaxRequest = new XMLHttpRequest();
-                }
-                catch (e) {
-                }
-                ajaxRequest.open("GET", "ajax/deleteUserDetails.php?user_id=" + id, true);
-                ajaxRequest.send(null);
-                ajaxRequest.onreadystatechange = function(){
-                    if(ajaxRequest.readyState == 4){
-                        searchUsers();
-                        hide1();
-                    }
-                }
-            }
         });
+        function show1(object){
+            $('#edit-divId').css('visibility','visible');
+            $('#curtainId').css('visibility','visible');
+            getVendorDetails(object.dataset.id);
+            //alert(object.dataset.id);
+        }
+        function show2(object){
+            $('#delete-divId').css('visibility','visible');
+            $('#curtainId').css('visibility','visible');
+            deleteId = object.dataset.id;
+        }
+        function hide1() {
+            $('#edit-divId').css('visibility','hidden');
+            $('#curtainId').css('visibility','hidden');
+            hide2();
+        }
+        function hide2() {
+            $('#delete-divId').css('visibility','hidden');
+            $('#curtainId').css('visibility','hidden');
+            var ajaxDisplay0 = document.getElementById('vendorName');
+            var ajaxDisplay1 = document.getElementById('vendorType');
+            var ajaxDisplay3 = document.getElementById('vendorEmail');
+            var ajaxDisplay2 = document.getElementById('vendorPhone');
+            var ajaxDisplay2b = document.getElementById('vendorPhone2');
+            var ajaxDisplay4 = document.getElementById('vendorLocation');
+            ajaxDisplay0.value = "";
+            ajaxDisplay1.value = 1;
+            ajaxDisplay2.value = "";
+            ajaxDisplay2b.value = "";
+            ajaxDisplay3.value = "";
+            ajaxDisplay4.value = 1;
+        }
+        function searchVendors(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+            var order = $('#selector-vendor-search').val();
+            var queryString = $('#textbox-vendor-search').val();
+            console.log(queryString+"--"+order);
+            ajaxRequest.open("GET", "ajax/vendorSearch.php?key=" + queryString+"&order="+order, true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxDisplay = document.getElementById('vendor-search-result-div');
+                    var ajaxResult = ajaxRequest.responseText;
+                    ajaxDisplay.innerHTML = ajaxResult;
 
+                }
+            }
+        }
+        function vendorsCount(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+
+            ajaxRequest.open("GET", "ajax/totalVendorCount.php", true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxDisplay = document.getElementById('vendorCount');
+                    var ajaxResult = ajaxRequest.responseText;
+                    ajaxDisplay.innerHTML = ajaxResult;
+
+                }
+            }
+        }
+        function appAvgRating(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+
+            ajaxRequest.open("GET", "ajax/vendorAvgAppRating.php", true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxDisplay = document.getElementById('appAvgRating');
+                    var ajaxResult = ajaxRequest.responseText;
+                    var rating = ajaxResult.split('--')[1];
+                    var count = ajaxResult.split('--')[0];
+                    ajaxDisplay.innerHTML = rating + " from "+ count;
+
+                }
+            }
+        }
+        function appRating(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+            var order = $('#selector-ratings-order').val();
+            ajaxRequest.open("GET", "ajax/vendorAppRatings.php?order="+order, true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxDisplay = document.getElementById('vendor-ratings-div');
+                    var ajaxResult = ajaxRequest.responseText;
+                    ajaxDisplay.innerHTML = ajaxResult;
+
+                }
+            }
+        }
+        function vendorFeedback(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+            var order = $('#selector-feedback-order').val();
+            ajaxRequest.open("GET", "ajax/vendorFeedback.php?order="+order, true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxDisplay = document.getElementById('feedback-div');
+                    var ajaxResult = ajaxRequest.responseText;
+                    ajaxDisplay.innerHTML = ajaxResult;
+
+                }
+            }
+        }
+        function vendorIssue(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+            var order = $('#selector-issue-order').val();
+            ajaxRequest.open("GET", "ajax/vendorIssue.php?order="+order, true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxDisplay = document.getElementById('issue-div');
+                    var ajaxResult = ajaxRequest.responseText;
+                    ajaxDisplay.innerHTML = ajaxResult;
+
+                }
+            }
+        }
+        function getVendorDetails(id){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+            ajaxRequest.open("GET", "ajax/getVendorDetails.php?vendor_id=" + id, true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxDisplay0 = document.getElementById('vendorName');
+                    var ajaxDisplay1 = document.getElementById('vendorType');
+                    var ajaxDisplay3 = document.getElementById('vendorEmail');
+                    var ajaxDisplay2 = document.getElementById('vendorPhone');
+                    var ajaxDisplay2b = document.getElementById('vendorPhone2');
+                    var ajaxDisplay4 = document.getElementById('vendorLocation');
+                    var ajaxDisplay5 = document.getElementById('vendorId');
+                    var ajaxResult = ajaxRequest.responseText.trim();
+
+                    ajaxDisplay0.value = ajaxResult.split('--')[0];
+                    var vendorType = ajaxResult.split('--')[1];
+                    //alert (vendorType);
+                    if(vendorType != 1 && vendorType != 2 && vendorType != 3 && vendorType != 4 && vendorType != 5){
+                        vendorType = 6;
+                    }
+                    else{
+                        vendorType = ajaxResult.split('--')[1];
+                    }
+                    ajaxDisplay1.value = vendorType;
+                    ajaxDisplay3.value = ajaxResult.split('--')[3];
+                    ajaxDisplay4.value = ajaxResult.split('--')[4];
+                    ajaxDisplay5.value = id;
+                    var fullPhone = ajaxResult.split('--')[2];
+                    if(fullPhone.includes("&&")){
+                        ajaxDisplay2.value = fullPhone.split('&&')[0];
+                        ajaxDisplay2b.value = fullPhone.split('&&')[1];
+                    }
+                    else{
+                        ajaxDisplay2.value = fullPhone;
+                    }
+
+                }
+            }
+        }
+        function updateVendorDetails(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+            var ajaxDisplay0 = document.getElementById('vendorName');
+            var ajaxDisplay1 = document.getElementById('vendorType');
+            var ajaxDisplay2 = document.getElementById('vendorEmail');
+            var ajaxDisplay3 = document.getElementById('vendorPhone');
+            var ajaxDisplay3b = document.getElementById('vendorPhone2');
+            var ajaxDisplay4 = document.getElementById('vendorLocation');
+            var ajaxDisplay5 = document.getElementById('vendorId');
+            var vendorType = ajaxDisplay1.value;
+            var vendorPhone = '';
+            if($('#vendor-phone-2').val().length > 0){
+                vendorPhone = ajaxDisplay3.value+'&&'+ajaxDisplay3b.value;
+            }
+            else{
+                vendorPhone = ajaxDisplay3.value;
+            }
+            alert("ajax/updateVendorDetails.php?vendor_id=" + ajaxDisplay5.value+"&vendor_name="+ajaxDisplay0.value+"&vendor_type="+
+                ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+vendorPhone+"&location="+ajaxDisplay4.value);
+            ajaxRequest.open("GET", "ajax/updateVendorDetails.php?vendor_id=" + ajaxDisplay5.value+"&vendor_name="+ajaxDisplay0.value+"&vendor_type="+
+                ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+vendorPhone+"&location="+ajaxDisplay4.value, true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var ajaxResult = ajaxRequest.responseText;
+                    //alert('-'+ajaxResult.trim()+'-');
+                    /*
+                     "ajax/updateUserDetails.php?user_id=" + ajaxDisplay5.value+"&surname="+ajaxDisplay0.value+"&firstname="+
+                     ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+ajaxDisplay3.value+"&location="+ajaxDisplay4.value);*/
+                    if(ajaxResult.trim() == 'done'){
+                        ajaxDisplay0.value = "";
+                        ajaxDisplay1.value = "";
+                        ajaxDisplay2.value = "";
+                        ajaxDisplay3.value = "";
+                        ajaxDisplay4.value = "";
+                        hide1();
+                        searchVendors();
+                    }
+                }
+            }
+        }
+        function deleteVendorDetails(id){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+            try {
+                ajaxRequest = new XMLHttpRequest();
+            }
+            catch (e) {
+            }
+            ajaxRequest.open("GET", "ajax/deleteUserDetails.php?user_id=" + id, true);
+            ajaxRequest.send(null);
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    searchUsers();
+                    hide1();
+                }
+            }
+        }
     </script>
     </head>
     <body>
@@ -629,7 +660,7 @@
                                 <br>
                                 <input id="vendorId" value="" style="visibility: hidden;"/>
                                 <input id="vendorName" type="text" value="" class="user-details-font" placeholder="Vendor Name"/>
-                                <select id="vendorType">
+                                <select id="vendorType" class="user-details-font">
                                     <option value="1">Gas Supplier</option>
                                     <option value="2">Hair Stylist</option>
                                     <option value="3">Make-Up Artist</option>
@@ -637,10 +668,10 @@
                                     <option value="5">Tailor</option>
                                     <option value="6">Other</option>
                                 </select>
-                                <input id="vendorEmail" type="text" value="" placeholder="Email Address"/>
-                                <input id="vendorPhone" type="text" value="Phone No."/>
-                                <input id="vendorPhone2" type="text" value="(Other) Phone No."/>
-                                <select id="vendorLocation">
+                                <input id="vendorEmail" class="user-details-font" type="text" value="" placeholder="Email Address"/>
+                                <input id="vendorPhone" class="user-details-font" type="text" value="" placeholder="Phone No."/>
+                                <input id="vendorPhone2" class="user-details-font" class="user-details-font" type="text" value="" placeholder="(Other) Phone No."/>
+                                <select id="vendorLocation" class="user-details-font">
                                     <option value="1">Surulere--Badagry</option>
                                     <option value="2">Ikeja--Berger</option>
                                     <option value="3">Shomolu--Ilupeju</option>

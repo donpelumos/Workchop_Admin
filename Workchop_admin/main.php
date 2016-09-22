@@ -71,6 +71,16 @@
             function hide2() {
                 $('#delete-divId').css('visibility','hidden');
                 $('#curtainId').css('visibility','hidden');
+                var ajaxDisplay0 = document.getElementById('userSurname');
+                var ajaxDisplay1 = document.getElementById('userFirstname');
+                var ajaxDisplay2 = document.getElementById('userEmail');
+                var ajaxDisplay3 = document.getElementById('userPhone');
+                var ajaxDisplay4 = document.getElementById('userLocation');
+                ajaxDisplay0.value = "";
+                ajaxDisplay1.value = "";
+                ajaxDisplay2.value = "";
+                ajaxDisplay3.value = "";
+                ajaxDisplay4.value = 1;
             }
             function searchUsers(){
                 var ajaxRequest;  // The variable that makes Ajax possible!
@@ -207,7 +217,7 @@
                         var ajaxDisplay2 = document.getElementById('userPhone');
                         var ajaxDisplay4 = document.getElementById('userLocation');
                         var ajaxDisplay5 = document.getElementById('userId');
-                        var ajaxResult = ajaxRequest.responseText;
+                        var ajaxResult = ajaxRequest.responseText.trim();
                         ajaxDisplay0.value = ajaxResult.split('--')[0];
                         ajaxDisplay1.value = ajaxResult.split('--')[1];
                         ajaxDisplay2.value = ajaxResult.split('--')[2];
@@ -626,11 +636,11 @@
                                <font style="font-family: 'Century Gothic'; font-size: 17px; color: #212121;">Edit User Details</font>
                                 <br>
                                 <input id="userId" value="" style="visibility: hidden;"/>
-                                <input id="userSurname" type="text" value="" class="user-details-font" placeholder="Surname"/>
-                                <input id="userFirstname" type="text" value="" placeholder="Firstname"/>
-                                <input id="userEmail" type="text" value="" placeholder="Email Addres"/>
-                                <input id="userPhone" type="text" value="" placeholder="Phone No."/>
-                                <select id="userLocation">
+                                <input id="userSurname"  type="text" value="" class="user-details-font" placeholder="Surname"/>
+                                <input id="userFirstname" class="user-details-font" type="text" value="" placeholder="Firstname"/>
+                                <input id="userEmail"  class="user-details-font" type="text" value="" placeholder="Email Addres"/>
+                                <input id="userPhone" class="user-details-font" type="text" value="" placeholder="Phone No."/>
+                                <select id="userLocation" class="user-details-font">
                                     <option value="1">Surulere--Badagry</option>
                                     <option value="2">Ikeja--Berger</option>
                                     <option value="3">Shomolu--Ilupeju</option>

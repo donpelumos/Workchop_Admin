@@ -77,10 +77,12 @@ try{
                         <p style=\"vertical-align: middle;margin: 0px;\">".$value[7]."</p>
                     </td>
                     <td class=\"vendor-table-body\" style=\"text-align: center\" >
-                        <img src=\"images/edit.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $vendorId ."\"/>
+                        <img src=\"images/edit.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $vendorId ."\" onclick=\"show1(this)\"
+                        class=\"edit-user\"/>
                     </td>
                     <td class=\"vendor-table-body\" style=\"text-align: center\">
-                        <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $vendorId ."\"/>
+                        <img src=\"images/cancel.png\" style=\"width: 20px;height:20px;cursor: pointer;\" data-id=\"". $vendorId ."\" class=\"edit-user\"
+                        onclick=\"show2(this)\"/>
                     </td>
                 </tr>
             ";
