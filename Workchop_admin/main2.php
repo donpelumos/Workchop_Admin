@@ -262,14 +262,13 @@
             var ajaxDisplay5 = document.getElementById('vendorId');
             var vendorType = ajaxDisplay1.value;
             var vendorPhone = '';
-            if($('#vendor-phone-2').val().length > 0){
+            if($('#vendorPhone2').val().length > 0){
                 vendorPhone = ajaxDisplay3.value+'&&'+ajaxDisplay3b.value;
             }
             else{
                 vendorPhone = ajaxDisplay3.value;
             }
-            alert("ajax/updateVendorDetails.php?vendor_id=" + ajaxDisplay5.value+"&vendor_name="+ajaxDisplay0.value+"&vendor_type="+
-                ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+vendorPhone+"&location="+ajaxDisplay4.value);
+            
             ajaxRequest.open("GET", "ajax/updateVendorDetails.php?vendor_id=" + ajaxDisplay5.value+"&vendor_name="+ajaxDisplay0.value+"&vendor_type="+
                 ajaxDisplay1.value+"&email="+ajaxDisplay2.value+"&phone="+vendorPhone+"&location="+ajaxDisplay4.value, true);
             ajaxRequest.send(null);
