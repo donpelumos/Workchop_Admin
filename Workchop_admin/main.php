@@ -29,7 +29,7 @@
                     searchUsers();
                 });
                 $('#selector-ratings-order').change(function () {
-                    appRating();
+                    appRating();s
                 });
                 $('#selector-feedback-order').change(function () {
                     userFeedback();
@@ -626,14 +626,14 @@
                                <font style="font-family: 'Century Gothic'; font-size: 17px; color: #212121;">Edit User Details</font>
                                 <br>
                                 <input id="userId" value="" style="visibility: hidden;"/>
-                                <input id="userSurname" type="text" value="" class="user-details-font"/>
-                                <input id="userFirstname" type="text" value=""/>
-                                <input id="userEmail" type="text" value=""/>
-                                <input id="userPhone" type="text" value=""/>
+                                <input id="userSurname" type="text" value="" class="user-details-font" placeholder="Surname"/>
+                                <input id="userFirstname" type="text" value="" placeholder="Firstname"/>
+                                <input id="userEmail" type="text" value="" placeholder="Email Addres"/>
+                                <input id="userPhone" type="text" value="" placeholder="Phone No."/>
                                 <select id="userLocation">
                                     <option value="1">Surulere--Badagry</option>
                                     <option value="2">Ikeja--Berger</option>
-                                    <option value="3">Shomolu--Ilupejuy</option>
+                                    <option value="3">Shomolu--Ilupeju</option>
                                     <option value="4">Yaba--Obalende</option>
                                     <option value="5">Ojota--Ikorodu</option>
                                     <option value="6">V.I--Epe</option>
