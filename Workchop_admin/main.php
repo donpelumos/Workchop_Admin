@@ -1,10 +1,36 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: BALE
- * Date: 09/09/2016
- * Time: 7:11 AM
- */
+    session_start();
+    if($_SESSION['auth'] == "yes")
+    {
+        //alert('true');
+    }
+    else
+    {
+        $ent_password = $_POST['password'];
+        $database = 'mysql:dbname=workchop_main;host=localhost;';
+        $user = 'workchop_admin';
+        $pwd = 'workchop_12345';
+
+        try{
+            $db = new PDO($database, $user, $pwd);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $query = $db->prepare("select * from admin_Password");
+            $query->execute();
+            $result = $query->fetchAll();
+            foreach($result as $value){
+                if(md5($ent_password) == $value[0]){
+                    $_SESSION['auth'] = "yes";
+                }
+                else
+                {
+                    header("Location: admin_error.php");
+                }
+            }
+        }
+        catch(Exception $e){
+
+        }
+    }
 
 ?>
 <html>
@@ -45,6 +71,9 @@
                 });
                 $('#sure-yes').click(function () {
                     deleteUserDetails(deleteId);
+                });
+                $('#log-out').click(function () {
+                    window.open("logout.php","_self");
                 });
                 usersCount();
                 appAvgRating();
@@ -296,27 +325,30 @@
             </div>
 
             <div style="clear: both;padding:10px;">
-                <table>
+                <table style="width:100%;text-align: left;table-layout: fixed;">
                     <tr>
-                        <td>
+                        <td style="word-wrap:break-word;text-align: right;">
                             <p style="font-family: 'Century Gothic';font-size: 18px;float: left;display: inline-block;
                             color: #0f0f0f">Total user count - </p>
                         </td>
-                        <td>
+                        <td style="word-wrap:break-word;text-align: left;">
                             <p style="font-family: 'Century Gothic';font-size: 28px;color: #2b669a;float: left;display: inline-block;
                             margin-left: 10px;" id="userCount"></p>
                         </td>
-                        <td>
+                        <td style="word-wrap:break-word">
                             <p style="font-family: 'Century Gothic';font-size: 28px;color: #03070a;float: left;display: inline-block;
                             margin-left: 10px;"> &nbsp; </p>
                         </td>
-                        <td>
+                        <td style="word-wrap:break-word;text-align: right;">
                             <p style="font-family: 'Century Gothic';font-size: 18px;float: left;display: inline-block;
                             color: #0f0f0f">Average App Rating - </p>
                         </td>
-                        <td>
+                        <td style="word-wrap:break-word;text-align: left;">
                             <p style="font-family: 'Century Gothic';font-size: 28px;color: #2b669a;float: left;display: inline-block;
                             margin-left: 10px;" id="appAvgRating"> </p>
+                        </td>
+                        <td style="word-wrap:break-word;text-align: right;">
+                            <button id="log-out" style="font-family: 'Century Gothic';font-size: 22px;">Log Out</button>
                         </td>
                     </tr>
                 </table>
