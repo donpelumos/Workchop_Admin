@@ -22,68 +22,74 @@
 			});
 			function changeImage(){
 				currImg++;
-				if(currImg == 11){
+				if(currImg == 12){
 					currImg = 1;
 				}
 				if(currImg == 1){
 					$('#img1').css('opacity','1.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 2){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','1.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 3){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','1.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 4){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','1.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 5){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','1.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 6){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','1.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 7){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','1.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 8){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','1.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 9){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','1.0');
-					$('#img10').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','0.0');
 				}
 				else if(currImg == 10){
 					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
 					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
 					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
-					$('#img10').css('opacity','1.0');
+					$('#img10').css('opacity','1.0');$('#img11').css('opacity','0.0');
+				}
+				else if(currImg == 11){
+					$('#img1').css('opacity','0.0');$('#img2').css('opacity','0.0');$('#img3').css('opacity','0.0');
+					$('#img4').css('opacity','0.0');$('#img5').css('opacity','0.0');$('#img6').css('opacity','0.0');
+					$('#img7').css('opacity','0.0');$('#img8').css('opacity','0.0');$('#img9').css('opacity','0.0');
+					$('#img10').css('opacity','0.0');$('#img11').css('opacity','1.0');
 				}
 				setTimeout(changeImage,4500);
 			}
@@ -111,6 +117,8 @@
 				top:0px;left:0px;opacity:0.0;"/>
 			<img id="img10" src="images/10.jpg" style="width:100%;height:100%;transition: all 2.0s ease;z-index:1;position:fixed;
 				top:0px;left:0px;opacity:0.0;"/>
+			<img id="img11" src="images/11.jpg" style="width:100%;height:100%;transition: all 2.0s ease;z-index:1;position:fixed;
+				top:0px;left:0px;opacity:0.0;"/>
 		</div>
 		<div style="width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;">
 			<!--<table style="width:100%;height:100%;text-align:center;display:table;" class="welcome-spin">
@@ -128,7 +136,7 @@
 				</tbody>
 			</table>
 		</div>-->
-		<div style="width:100%; height:100%;background-color:#000000;opacity:0.3; position:absolute;top:0px;left:0px;z-index:1;">
+		<div style="width:100%; height:100%;background-color:#000000;opacity:0.3; position:fixed;top:0px;left:0px;z-index:1;">
 
 		</div>
 		<div style="width:100%; height:100%; position:absolute;top:0px;left:0px;z-index:2;text-align: center;">
@@ -142,7 +150,15 @@
 			</table>
 			<font class="no-1">The no.1 tradesman platform</font>
 			<br>
-			<font class="sub-text">Locate the top and closest masters as rated by clients and used by your contacts</font>
+			<font class="sub-text">Easily locate the top and closest masters to you as recommended by </font><br>
+			<font class="sub-text">clients and used by your contacts</font>
+			<br><br><br>
+			<font class="launching-text">Launching Soon . . .</font><br>
+			<div class="email-div">
+				<input type="text" class="email"/>
+				<button class="join-button">Request Invite</button>
+			</div><br>
+			<font class="small-text">BE ONE OF THE FIRST TO BE NOTIFIED</font><br>
 		</div>
 	</body>
 </html>
