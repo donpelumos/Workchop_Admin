@@ -11,6 +11,7 @@
     <head>
         <title>Admin</title>
         <meta charset="utf-8">
+        <link rel="icon" href="workchopphoneicon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -224,7 +225,7 @@
                 </table>
 
                 <p class="big-font" style="padding-bottom: 0px;">
-                    Be the one of the first on the world's first vendor reference platform!
+                    Be one of the first on the world's first vendor reference platform!
                 </p>
                 <p class="big-font" style="margin-top: 0px;padding-top: 0px;">
                     Register below

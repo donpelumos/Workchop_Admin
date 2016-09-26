@@ -72,6 +72,9 @@
                 $('#sure-yes').click(function () {
                     deleteUserDetails(deleteId);
                 });
+                $('#log-email').click(function () {
+                    window.open("http://www.workchopapp.com:2095/cpsess8725134013/webmail/x3/index.html","_blank");
+                });
                 $('#log-out').click(function () {
                     window.open("logout.php","_self");
                 });
@@ -335,10 +338,6 @@
                             <p style="font-family: 'Century Gothic';font-size: 28px;color: #2b669a;float: left;display: inline-block;
                             margin-left: 10px;" id="userCount"></p>
                         </td>
-                        <td style="word-wrap:break-word">
-                            <p style="font-family: 'Century Gothic';font-size: 28px;color: #03070a;float: left;display: inline-block;
-                            margin-left: 10px;"> &nbsp; </p>
-                        </td>
                         <td style="word-wrap:break-word;text-align: right;">
                             <p style="font-family: 'Century Gothic';font-size: 18px;float: left;display: inline-block;
                             color: #0f0f0f">Average App Rating - </p>
@@ -346,6 +345,9 @@
                         <td style="word-wrap:break-word;text-align: left;">
                             <p style="font-family: 'Century Gothic';font-size: 28px;color: #2b669a;float: left;display: inline-block;
                             margin-left: 10px;" id="appAvgRating"> </p>
+                        </td>
+                        <td style="word-wrap:break-word;text-align: right;">
+                            <button id="log-email" style="font-family: 'Century Gothic';font-size: 22px;">Email</button>
                         </td>
                         <td style="word-wrap:break-word;text-align: right;">
                             <button id="log-out" style="font-family: 'Century Gothic';font-size: 22px;">Log Out</button>
