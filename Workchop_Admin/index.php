@@ -17,8 +17,61 @@
 		<link rel="stylesheet" href="index.css">
 		<script type="text/javascript">
 			var currImg=0;
+			var validEmail = 0;
 			$(document).ready(function () {
-				changeImage();
+				var screenHeight = $("body").innerHeight();
+				var caseHeight = $('#full-case').innerHeight();
+				//alert (screenHeight+'--'+caseHeight);
+				var margin = (screenHeight-caseHeight)/2;
+				if(screenHeight > 450) {
+					$('#full-case').css('margin-top', margin);
+					$('#full-case').css('margin-bottom', margin);
+				}
+					changeImage();
+				$('#join-button').mousedown(function () {
+					if(validEmail == 1){
+						$(this).css('opacity','0.8');
+					}
+				});
+				$('#join-button').mouseup(function () {
+					if(validEmail == 1){
+						$(this).css('opacity','1.0');
+					}
+				});
+				$('#join-button').click(function(){
+					if(validEmail == 1) {
+						sendEmail();
+					}
+				});
+				$('#email-input').keyup(function(){
+					if($(this).val() == ''){
+						$('.join-button').css('opacity','0.7');
+						$('.join-button').css('cursor','default');
+					}
+					else if($(this).val().includes(',') || $(this).val().includes('#') || $(this).val().includes('/')){
+
+					}
+					else{
+						if($(this).val().includes('@')){
+							if($(this).val().includes('.c')){
+								$('.join-button').css('opacity','1.0');
+								$('.join-button').css('cursor','pointer');
+								validEmail = 1;
+							}
+							else{
+								$('.join-button').css('opacity','0.7');
+								$('.join-button').css('cursor','default');
+								validEmail = 0;
+							}
+						}
+						else{
+							$('.join-button').css('opacity','0.7');
+							$('.join-button').css('cursor','default');
+							validEmail = 0;
+						}
+
+					}
+				});
 			});
 			function changeImage(){
 				currImg++;
@@ -93,6 +146,38 @@
 				}
 				setTimeout(changeImage,4500);
 			}
+			function hideSuccess(){
+				$('#success-div').css('visibility','hidden');
+				$('#success-alert').css('visibility','hidden');
+				$('#questions-div').css('visibility','visible');
+			}
+			function hideFailure(){
+				$('#failure-div').css('visibility','hidden');
+				$('#failure-alert').css('visibility','hidden');
+			}
+			function sendEmail(){
+				var ajaxRequest;  // The variable that makes Ajax possible!
+				try {
+					ajaxRequest = new XMLHttpRequest();
+				}
+				catch (e) {
+				}
+
+				var email = $('#email-input').val();
+				ajaxRequest.open("GET", "add_to_waiting_list.php?email=" + email, true);
+				ajaxRequest.send(null);
+				ajaxRequest.onreadystatechange = function(){
+					if(ajaxRequest.readyState == 4) {
+						var ajaxResult = ajaxRequest.responseText;
+						if (ajaxResult == 'done') {
+							$('#success-alert').css('visibility', 'visible');
+						}
+					}
+					else{
+						$('#failure-alert').css('visibility','visible');
+					}
+				}
+			}
 		</script>
 	</head>
 	<body class="grad">
@@ -120,8 +205,8 @@
 			<img id="img11" src="images/11.jpg" style="width:100%;height:100%;transition: all 2.0s ease;z-index:1;position:fixed;
 				top:0px;left:0px;opacity:0.0;"/>
 		</div>
-		<div style="width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;">
-			<!--<table style="width:100%;height:100%;text-align:center;display:table;" class="welcome-spin">
+		<!--<div style="width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;">
+			<table style="width:100%;height:100%;text-align:center;display:table;" class="welcome-spin">
 				<tbody style="width:100%;">
 					<tr style="width:100%;">
 						<td align="center" style="vertical-align:bottom;padding:0px;">
@@ -140,25 +225,63 @@
 
 		</div>
 		<div style="width:100%; height:100%; position:absolute;top:0px;left:0px;z-index:2;text-align: center;">
-			<table class="table-prop">
-				<tr>
-					<td style="text-align: center">
-						<img src="images/icon.png" class="icon-prop">
-						<img src="images/logo.png" class="logo-prop">
-					</td>
-				</tr>
-			</table>
-			<font class="no-1">The no.1 tradesman platform</font>
+			<div id="full-case">
+				<table class="table-prop">
+					<tr>
+						<td style="text-align: center">
+							<img src="images/icon.png" class="icon-prop">
+							<img src="images/logo.png" class="logo-prop">
+						</td>
+					</tr>
+				</table>
+				<font class="no-1">The no.1 Tradesman reference platform</font>
+				<br><br>
+				<font class="sub-text">Find trusted and verified tradesmen to get your job done !</font><br>
+				<br><br><br>
+				<font class="launching-text">Launching Soon . . .</font><br>
+				<div class="email-div">
+					<input type="text" class="email" id="email-input" placeholder="Email Address"/>
+					<button class="join-button" id="join-button">Request Invite</button>
+				</div><br>
+				<font class="small-text">BE ONE OF THE FIRST TO BE NOTIFIED</font><br><br><br>
+			</div>
+		</div>
+		<div id="success-div" style="width:100%; height:100%; position:fixed;top:0px;left:0px;z-index:4;text-align: center;visibility: hidden;">
+			<div id="success-alert" class="alert alert-success" role="alert" style="max-width: 450px;display: inline-block;
+				margin-top: 15%;">
+				<strong>Success!</strong> You will be notified once there is a stable release.
+				<a class="close" data-dismiss="alert" aria-label="close" title="close" onclick="hideSuccess()"
+					style="margin-left: 10px;">×</a>
+			</div>
+		</div>
+		<div id="failure-div" style="width:100%; height:100%; position:fixed;top:0px;left:0px;z-index:5;text-align: center;visibility: hidden;">
+			<div id="failure-alert" class="alert alert-danger" role="alert" style="max-width: 450px;display: inline-block;
+				margin-top: 15%;">
+				<strong>Failure!</strong> Unable to connect.
+				<a class="close" data-dismiss="alert" aria-label="close" title="close" onclick="hideFailure()"
+				   style="margin-left: 10px;">×</a>
+			</div>
+		</div>
+		<div id="questions-div" style="width:100%; height:100%; position:fixed;top:0px;left:0px;z-index:3;text-align: center; visibility: hidden;">
 			<br>
-			<font class="sub-text">Easily locate the top and closest masters to you as recommended by </font><br>
-			<font class="sub-text">clients and used by your contacts</font>
-			<br><br><br>
-			<font class="launching-text">Launching Soon . . .</font><br>
-			<div class="email-div">
-				<input type="text" class="email"/>
-				<button class="join-button">Request Invite</button>
-			</div><br>
-			<font class="small-text">BE ONE OF THE FIRST TO BE NOTIFIED</font><br>
+			<div style="background-color: #ffffff;display: inline-block;margin-top: 100px;">
+				<div style="display: block;padding:15px;">
+					<font class="question-font">Gender : </font>
+					<select class="question-input">
+						<option value="female">Female</option>
+						<option value="male">Male</option>
+					</select>
+					<br><br>
+					<font class="question-font">How did you hear about this platform : </font>
+					<select class="question-input">
+						<option value="1">Online Adverts</option>
+						<option value="2">Social Media Broadcasts</option>
+						<option value="3">Told by a friend or colleague</option>
+					</select>
+					<br><br>
+					<button id="send-email-button">Ok</button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
