@@ -172,9 +172,11 @@
 						if (ajaxResult == 'done') {
 							$('#success-alert').css('visibility', 'visible');
 						}
+						else{
+							$('#failure-alert').css('visibility','visible');
+						}
 					}
 					else{
-						$('#failure-alert').css('visibility','visible');
 					}
 				}
 			}
