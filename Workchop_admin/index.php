@@ -18,6 +18,7 @@
 		<script type="text/javascript">
 			var currImg=0;
 			var validEmail = 0;
+			var idGiven = '';
 			$(document).ready(function () {
 				var screenHeight = $("body").innerHeight();
 				var caseHeight = $('#full-case').innerHeight();
@@ -169,12 +170,15 @@
 				ajaxRequest.onreadystatechange = function(){
 					if(ajaxRequest.readyState == 4) {
 						var ajaxResult = ajaxRequest.responseText;
-						if (ajaxResult == 'done') {
+						if (ajaxResult.split('--')[0] == 'done') {
 							$('#success-alert').css('visibility', 'visible');
+							idGiven = ajaxResult.split('--')[1];
+						}
+						else{
+							$('#failure-alert').css('visibility','visible');
 						}
 					}
 					else{
-						$('#failure-alert').css('visibility','visible');
 					}
 				}
 			}
