@@ -1,0 +1,188 @@
+@font-face {
+    font-family: RobotoThin;
+    src: url(fonts/roboto.thin.ttf);
+}
+@font-face {
+    font-family: RobotoNormal;
+    src: url(fonts/roboto.regular.ttf);
+}
+.grad {text-align: center;}
+img{object-fit: cover;}
+.welcome-image{width:300px;height:300px;margin-top:-20px;}
+.welcome-logo{width:50%;}
+.welcome-text{font-size:40px;margin:0px;padding:0px;}
+.icon-prop{width:110px;height:110px;}
+.logo-prop{width:472px;height:110px;}
+.table-prop{text-align:center; margin-top:40px;width: 70%;margin-left: 15%;margin-right: 15%;margin-bottom: 20px;}
+.no-1{font-size: 40px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:15px;
+padding-right:15px;}
+.sub-text{font-size: 24px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+    padding-left:15px; padding-right:15px;}
+.launching-text{font-size: 48px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
+.email{font-size: 24px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
+width: 320px;display: inline;padding:3px;}
+.email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
+.join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
+padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
+    font-size: 24px;}
+.email-div{width: 100%;max-width: 500px;text-align: center;margin:0px;display: inline-block;height:44px;}
+.small-text{font-size: 16px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+    background-color: rgba(0, 0, 0, 0.33);}
+.question-font{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight: bold;}
+.question-input{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight:normal;display: inline;padding:3px;font-weight: bold;}
+select option{font-weight: bold;}
+
+@media  (max-width: 2600px) {
+    .icon-prop{width:160px;height:160px;}
+    .logo-prop{width:686px;height:160px;}
+    .table-prop{text-align:center; margin-top:40px;width: 70%;margin-left: 15%;margin-right: 15%;margin-bottom: 20px;}
+    .no-1{font-size: 65px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:15px;
+        padding-right:15px;}
+    .sub-text{font-size: 49px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+        padding-left:15px; padding-right:15px;}
+    .launching-text{font-size: 70px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
+    .email{font-size: 49px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
+        width: 720px;display: inline;padding:3px;}
+    .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
+    .join-button{margin-left: -5px;height: 80px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
+        padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
+    font-size: 30px;}
+    .email-div{width: 100%;max-width: 1400px;text-align: center;margin:0px;display: inline-block;height:80px;}
+    .small-text{font-size: 40px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        background-color: rgba(0, 0, 0, 0.33);}
+    .question-font{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight: bold;}
+    .question-input{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight:normal;display: inline;padding:3px;font-weight: bold;}
+    select option{font-weight: bold;}
+}
+
+@media  (max-width: 1500px) {
+    .icon-prop{width:110px;height:110px;}
+    .logo-prop{width:472px;height:110px;}
+    .table-prop{text-align:center; margin-top:40px;width: 70%;margin-left: 15%;margin-right: 15%;margin-bottom: 20px;}
+    .no-1{font-size: 40px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:15px;
+        padding-right:15px;}
+    .sub-text{font-size: 24px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+        padding-left:15px; padding-right:15px;}
+    .launching-text{font-size: 48px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
+    .email{font-size: 24px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
+        width: 320px;display: inline;padding:3px;}
+    .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
+    .join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
+        padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
+        font-size: 24px;}
+    .email-div{width: 100%;max-width: 1100px;text-align: center;margin:0px;display: inline-block;height:44px;}
+    .small-text{font-size: 16px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        background-color: rgba(0, 0, 0, 0.33);}
+    .question-font{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight: bold;}
+    .question-input{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight:normal;display: inline;padding:3px;font-weight: bold;}
+    select option{font-weight: bold;}
+}
+
+@media  (max-width: 1100px) {
+    .icon-prop{width:88px;height:88px;}
+    .logo-prop{width:377px;height:88px;}
+    .table-prop{text-align:center; margin-top:40px;width: 70%;margin-left: 15%;margin-right: 15%;margin-bottom: 20px;}
+    .no-1{font-size: 40px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:15px;
+        padding-right:15px;}
+    .sub-text{font-size: 24px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+        padding-left:15px; padding-right:15px;}
+    .launching-text{font-size: 48px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
+    .email{font-size: 24px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
+        width: 320px;display: inline;padding:3px;}
+    .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
+    .join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
+        padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
+        font-size: 20px;}
+    .email-div{width: 100%;max-width: 900px;text-align: center;margin:0px;display: inline-block;height:44px;}
+    .small-text{font-size: 16px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        background-color: rgba(0, 0, 0, 0.33);}
+    .question-font{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight: bold;}
+    .question-input{font-size: 16px;color: #111111;font-family: 'RobotoThin';font-weight:normal;display: inline;padding:3px;font-weight: bold;}
+    select option{font-weight: bold;}
+}
+
+@media  (max-width: 800px) {
+    .table-prop{text-align:center; margin-top:40px;width: 90%;margin-left: 5%;margin-right: 5%;margin-bottom: 20px;}
+    .no-1{font-size: 32px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:15px;
+        padding-right:15px;}
+    .sub-text{font-size: 18px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+        padding-left:8px; padding-right:8px;}
+    .launching-text{font-size: 40px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        margin-top: -20px;display:block;}
+    .join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
+        padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
+        font-size: 18px;}
+    .email-div{width: 100%;max-width: 500px;text-align: center;margin-top:-20px;display: inline-block;height:44px;}
+}
+
+@media  (max-width: 600px) {
+    .icon-prop{width:60px;height:60px;}
+    .logo-prop{width:257px;height:60px;}
+    .table-prop{text-align:center; margin-top:40px;width: 90%;margin-left: 5%;margin-right: 5%;margin-bottom: 10px;}
+    .no-1{font-size: 25px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:12px;
+        padding-right:12px;}
+    .sub-text{font-size: 16px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+        padding-left:8px; padding-right:8px;}
+    .launching-text{font-size: 32px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        margin-top: -30px;display:block;}
+    .email-div{width: 100%;max-width: 500px;text-align: center;margin-top:-15px;display: inline-block;height:34px;}
+    .email{font-size: 17px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
+        width: 320px;display: inline;padding:3px;}
+    .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
+    .join-button{margin-left: -5px;height: 34px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 10px;
+        padding-right: 10px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
+        font-size:15px;}
+}
+
+@media  (max-width: 450px) {
+    .icon-prop{width:60px;height:60px;}
+    .logo-prop{width:257px;height:60px;}
+    .table-prop{text-align:center; margin-top:10px;width: 90%;margin-left: 5%;margin-right: 5%;margin-bottom: 5px;}
+    .no-1{font-size: 17px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:5px;
+        padding-right:5px;}
+    .sub-text{font-size: 12px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+        padding-left:3px; padding-right:3px;}
+    .launching-text{font-size: 24px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        margin-top: -30px;display:block;}
+    .email-div{width: 100%;max-width: 500px;text-align: center;margin-top:-15px;display: inline-block;height:31px;}
+    .email{font-size: 15px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
+        width: 250px;display: inline;padding:3px;}
+    .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
+    .join-button{margin-left: -5px;height: 31px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 7px;
+        padding-right: 7px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
+        font-size:12px;}
+    .small-text{font-size: 12px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        background-color: rgba(0, 0, 0, 0.33);}
+}
+@media  (max-width: 340px) {
+    .icon-prop{width:60px;height:60px;}
+    .logo-prop{width:257px;height:60px;}
+    .table-prop{text-align:center; margin-top:10px;width: 96%;margin-left: 2%;margin-right: 2%;margin-bottom: 5px;}
+    .no-1{font-size: 15px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:2px;
+        padding-right:2px;}
+    .sub-text{font-size: 10px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+        padding-left:1px; padding-right:1px;}
+    .launching-text{font-size: 18px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
+        margin-top: -30px;display:block;}
+    .email-div{width: 100%;max-width: 500px;text-align: center;margin-top:-15px;display: inline-block;height:31px;}
+    .email{font-size: 15px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
+        width: 215px;display: inline;padding:3px;}
+    .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
+    .join-button{margin-left: -5px;height: 31px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left:2px;
+        padding-right: 2px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;}
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #ddd;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #ddd;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #ddd;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #ddd;
+}
