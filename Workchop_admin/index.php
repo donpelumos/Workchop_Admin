@@ -28,7 +28,7 @@
 					$('#full-case').css('margin-top', margin);
 					$('#full-case').css('margin-bottom', margin);
 				}
-					changeImage();
+				changeImage();
 				$('#join-button').mousedown(function () {
 					if(validEmail == 1){
 						$(this).css('opacity','0.8');
@@ -43,6 +43,10 @@
 					if(validEmail == 1) {
 						sendEmail();
 					}
+				});
+				$('#send-email-button').click(function () {
+					sendGender();
+					$('#questions-div').css('visibility','hidden');
 				});
 				$('#email-input').keyup(function(){
 					if($(this).val() == ''){
@@ -173,9 +177,37 @@
 						if (ajaxResult.split('--')[0] == 'done') {
 							$('#success-alert').css('visibility', 'visible');
 							idGiven = ajaxResult.split('--')[1];
+							$('#email-input').val("");
+							//alert(idGiven);
 						}
 						else{
 							$('#failure-alert').css('visibility','visible');
+						}
+					}
+					else{
+					}
+				}
+			}
+			function sendGender(){
+				var ajaxRequest;  // The variable that makes Ajax possible!
+				try {
+					ajaxRequest = new XMLHttpRequest();
+				}
+				catch (e) {
+				}
+
+				var gender = $('#gender').val();
+				var heardFrom = $('#heard-from').val();
+				ajaxRequest.open("GET", "update_waiting_list.php?gender=" + gender+"&heard_from="+heardFrom+"&id="+idGiven, true);
+				ajaxRequest.send(null);
+				ajaxRequest.onreadystatechange = function(){
+					if(ajaxRequest.readyState == 4) {
+						var ajaxResult = ajaxRequest.responseText;
+						if (ajaxResult.split('--')[0] == 'done') {
+
+						}
+						else{
+
 						}
 					}
 					else{
@@ -266,21 +298,22 @@
 				   style="margin-left: 10px;">×</a>
 			</div>
 		</div>
-		<div id="questions-div" style="width:100%; height:100%; position:fixed;top:0px;left:0px;z-index:3;text-align: center; visibility: hidden;">
+		<div id="questions-div" style="width:100%; height:100%; position:fixed;top:0px;left:0px;z-index:3;text-align: center;
+		visibility: hidden;">
 			<br>
 			<div style="background-color: #ffffff;display: inline-block;margin-top: 100px;">
 				<div style="display: block;padding:15px;">
 					<font class="question-font">Gender : </font>
-					<select class="question-input">
+					<select class="question-input" id="gender">
 						<option value="female">Female</option>
 						<option value="male">Male</option>
 					</select>
 					<br><br>
 					<font class="question-font">How did you hear about this platform : </font>
-					<select class="question-input">
-						<option value="1">Online Adverts</option>
-						<option value="2">Social Media Broadcasts</option>
-						<option value="3">Told by a friend or colleague</option>
+					<select class="question-input" id="heard-from">
+						<option value="Online Adverts">Online Adverts</option>
+						<option value="Social Media Broadcasts">Social Media Broadcasts</option>
+						<option value="Told by a friend or colleague">Told by a friend or colleague</option>
 					</select>
 					<br><br>
 					<button id="send-email-button">Ok</button>
