@@ -158,9 +158,9 @@ select option{font-weight: bold;}
     .icon-prop{width:60px;height:60px;}
     .logo-prop{width:257px;height:60px;}
     .table-prop{text-align:center; margin-top:10px;width: 96%;margin-left: 2%;margin-right: 2%;margin-bottom: 5px;}
-    .no-1{font-size: 15px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:2px;
+    .no-1{font-size: 18px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0, 0, 0, 0.33);padding-left:2px;
         padding-right:2px;}
-    .sub-text{font-size: 10px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
+    .sub-text{font-size: 14px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;margin-top:0px;background-color: rgba(0, 0, 0, 0.33);
         padding-left:1px; padding-right:1px;}
     .launching-text{font-size: 18px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
         margin-top: -30px;display:block;}

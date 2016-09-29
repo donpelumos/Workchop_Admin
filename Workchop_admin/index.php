@@ -314,6 +314,9 @@
 						<option value="Online Adverts">Online Adverts</option>
 						<option value="Social Media Broadcasts">Social Media Broadcasts</option>
 						<option value="Told by a friend or colleague">Told by a friend or colleague</option>
+						<option value="My Spirit Led Me Here">My Spirit Led Me Here</option>
+						<option value="Saw It In My Dream">Saw It In My Dream</option>
+						<option value="Boredom">Boredom</option>
 					</select>
 					<br><br>
 					<button id="send-email-button">Ok</button>
