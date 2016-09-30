@@ -319,7 +319,7 @@
 						<option value="Boredom">Boredom</option>
 					</select>
 					<br><br>
-					<button id="send-email-button">Ok</button>
+					<button id="send-email-button"> Ok </button>
 				</div>
 			</div>
 		</div>
