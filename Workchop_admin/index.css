@@ -20,11 +20,11 @@ padding-right:15px;}
     padding-left:15px; padding-right:15px;}
 .launching-text{font-size: 48px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
 .email{font-size: 24px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
-width: 320px;display: inline;padding:3px;}
+width: 320px;display: inline;padding:3px; border-top-left-radius: 10px;border-bottom-left-radius: 10px;}
 .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
 .join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
 padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
-    font-size: 24px;}
+    font-size: 18px;border-top-right-radius: 10px; border-bottom-right-radius: 10px;}
 .email-div{width: 100%;max-width: 500px;text-align: center;margin:0px;display: inline-block;height:44px;}
 .small-text{font-size: 16px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
     background-color: rgba(0, 0, 0, 0.33);}
@@ -42,11 +42,11 @@ select option{font-weight: bold;}
         padding-left:15px; padding-right:15px;}
     .launching-text{font-size: 70px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
     .email{font-size: 49px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
-        width: 720px;display: inline;padding:3px;}
+        width: 720px;display: inline;padding:3px; border-top-left-radius: 10px;border-bottom-left-radius: 10px;}
     .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
     .join-button{margin-left: -5px;height: 80px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
         padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
-    font-size: 30px;}
+    font-size: 24px;}
     .email-div{width: 100%;max-width: 1400px;text-align: center;margin:0px;display: inline-block;height:80px;}
     .small-text{font-size: 40px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
         background-color: rgba(0, 0, 0, 0.33);}
@@ -65,11 +65,11 @@ select option{font-weight: bold;}
         padding-left:15px; padding-right:15px;}
     .launching-text{font-size: 48px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
     .email{font-size: 24px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
-        width: 320px;display: inline;padding:3px;}
+        width: 320px;display: inline;padding:3px; border-top-left-radius: 10px;border-bottom-left-radius: 10px;}
     .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
     .join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
         padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
-        font-size: 24px;}
+        font-size: 18px;}
     .email-div{width: 100%;max-width: 1100px;text-align: center;margin:0px;display: inline-block;height:44px;}
     .small-text{font-size: 16px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
         background-color: rgba(0, 0, 0, 0.33);}
@@ -88,11 +88,11 @@ select option{font-weight: bold;}
         padding-left:15px; padding-right:15px;}
     .launching-text{font-size: 48px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;}
     .email{font-size: 24px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
-        width: 320px;display: inline;padding:3px;}
+        width: 320px;display: inline;padding:3px; border-top-left-radius: 10px;border-bottom-left-radius: 10px;}
     .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
     .join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
         padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
-        font-size: 20px;}
+        font-size:16px;}
     .email-div{width: 100%;max-width: 900px;text-align: center;margin:0px;display: inline-block;height:44px;}
     .small-text{font-size: 16px;color: #ffffff;font-family: 'RobotoThin';font-weight: 300;padding-left:15px; padding-right:15px;
         background-color: rgba(0, 0, 0, 0.33);}
@@ -111,7 +111,7 @@ select option{font-weight: bold;}
         margin-top: -20px;display:block;}
     .join-button{margin-left: -5px;height: 44px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 20px;
         padding-right: 20px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
-        font-size: 18px;}
+        font-size: 15px;}
     .email-div{width: 100%;max-width: 500px;text-align: center;margin-top:-20px;display: inline-block;height:44px;}
 }
 
@@ -127,11 +127,11 @@ select option{font-weight: bold;}
         margin-top: -30px;display:block;}
     .email-div{width: 100%;max-width: 500px;text-align: center;margin-top:-15px;display: inline-block;height:34px;}
     .email{font-size: 17px;color: #f5fff4;font-family: 'RobotoThin';font-weight: 300;background-color: rgba(0,0,0,0);border:2px solid #0075d8;
-        width: 320px;display: inline;padding:3px;}
+        width: 320px;display: inline;padding:3px; border-top-left-radius: 7px;border-bottom-left-radius: 7px;}
     .email:focus{outline:thin dotted;outline:5px auto #0075d8;outline-offset:-2px}
     .join-button{margin-left: -5px;height: 34px;display: inline;vertical-align: top;background-color: #0075d8;opacity:0.7;padding-left: 10px;
         padding-right: 10px;color: #ffffff; border:2px solid #0075d8;font-family: RobotoThin;cursor: default;outline: none;
-        font-size:15px;}
+        font-size:14px;}
 }
 
 @media  (max-width: 450px) {
